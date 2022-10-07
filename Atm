@@ -1,0 +1,17 @@
+package atmassignment;
+import java.util.*;
+public class Atm {
+	Scanner sc = new Scanner(System.in);
+	int twoth;
+	int fiveh; 
+	int hund;
+	void putmoney(){
+	System.out.println("Enter the no of $2000 : ");
+	twoth = sc.nextInt();
+	System.out.println("Enter the no of $500 : ");
+	fiveh = sc.nextInt();
+	System.out.println("Enter the no of $100 : ");
+	hund = sc.nextInt();
+	System.out.println("Total value : " +(2000*twoth + 500*fiveh + 100*hund));
+	}
+}
