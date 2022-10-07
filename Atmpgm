@@ -1,0 +1,38 @@
+package atmassignment;
+import java.util.*;
+public class Atmpgm {
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	Current cr = new Current();
+	cr.putmoney();
+	int ch;
+	   for(int i=1;i<15;i++)
+		{
+			System.out.println("\n1.Account Holder Details 2.withdraw 3.Deposit 4.Balance 5:Transfer 6.Exit\n");
+			System.out.println("Enter choice : ");
+			ch = sc.nextInt();
+			switch(ch)
+			{
+			   case 1:
+			       cr.getdata();
+			       break;
+			   case 2:
+				   cr.withdraw();
+				   break;
+			   case 3:
+				   cr.Deposit();
+				   break;
+			   case 4:
+				   cr.Balance();
+				   break;
+			   case 5:
+				   cr.Transfer();
+				   break;
+			   case 6:
+				   System.exit(0);
+			   default:
+				   System.out.println("Wrong choice!!!!");
+			}
+		}
+	}
+}
