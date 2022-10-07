@@ -1,0 +1,74 @@
+package atmassignment;
+import java.util.*;
+public class Current extends Atm{
+	Scanner sc = new Scanner(System.in);
+	int balance;
+	int deposit;
+	void Balance(){
+	   System.out.println("Enter the Balance ");
+	   balance = sc.nextInt();
+	   System.out.println("The Balance is " + balance);
+	}
+	void Deposit(){
+	   System.out.println("Enter Deposit : ");
+	   deposit = sc.nextInt();
+	   balance = balance + deposit;
+	   System.out.println("Balance : "+balance);
+	}
+
+	void getdata()
+	{
+	   System.out.println("Enter the name : ");
+	   String name = sc.next();
+	   System.out.println("Enter the pin no : ");
+	   int pin = sc.nextInt();
+	   System.out.println("|------------------------|");
+	   System.out.println("|---Name--- --Pin no-----|");
+	   System.out.println("|------------------------|");
+	   System.out.println("| "+name+"   |   "+pin+"      |");
+	   System.out.println("|------------------------|");
+	}
+
+	void withdraw()
+	{
+	   int w_amt;
+	   System.out.println("Enter withdraw amount : ");
+	   w_amt = sc.nextInt();
+	   if(w_amt>balance || w_amt>10000)
+	   {
+	      System.out.println(" Sorry You can't withdraw!");
+	   }
+	   else if(w_amt>100)
+	   {
+		   balance = balance - w_amt;
+	   }
+	   else
+	   {
+		   System.out.println("");
+	    }
+	   System.out.println("Balance : "+balance);
+	}
+	void Transfer()
+	{
+	   int t_amt;
+	   int u_balance = 15000;
+	   System.out.println("Enter name of the person : ");
+	   String u_name = sc.next();
+	   int accno;
+	   System.out.println("Enter the Account no : ");
+	   accno = sc.nextInt();
+	   System.out.println("Enter the Transfer amount : ");
+	   t_amt = sc.nextInt();
+	   if(t_amt>10000)
+	   {
+	      System.out.println("Sorry can't Transfer !!");
+	   }
+	   else
+	   {
+		   u_balance = u_balance + t_amt;
+		   System.out.println("The Person Balance: "+u_balance);
+		   balance = balance - t_amt;
+		   System.out.println("\nYour Balance: "+balance);
+	   }
+	}
+}
